@@ -18,6 +18,6 @@ public class J2SEMapFactory extends MapFactory implements I_Factory {
 	}
 
 	protected static void init() throws Exception {
-		init(new J2SEMapFactory());
+		init(new J2SEMapFactory(), new J2SEImmutableMapFactory());
 	}
 }
