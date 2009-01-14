@@ -29,8 +29,8 @@ public class J2SEPropertyFactory extends PropertyFactory implements I_Factory {
 			InputStream in = J2SEPropertyFactory.class.getResourceAsStream(propClasspathName);
 			
 			/**
-			 * this will only read askii and utf8 not 
-			 * (extended utf8 (chineese, sanskrit exc))
+			 * this will only read askii and not 
+			 * extended utf8 (chineese, sanskrit exc)
 			 */
 			StringBuffer sb = new StringBuffer();
 			byte [] b = new byte[1];

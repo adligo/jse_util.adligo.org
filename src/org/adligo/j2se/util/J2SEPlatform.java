@@ -22,7 +22,7 @@ public class J2SEPlatform extends Platform {
 	}
 	
 	protected static boolean isLogEnabled() {
-		return false;
+		return true;
 	}
 	
 	protected static void log(String p){
