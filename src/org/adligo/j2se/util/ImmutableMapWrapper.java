@@ -7,6 +7,7 @@ import org.adligo.i.util.client.I_ImmutableMap;
 import org.adligo.i.util.client.I_Iterator;
 import org.adligo.i.util.client.IteratorFactory;
 
+@SuppressWarnings("unchecked")
 public class ImmutableMapWrapper implements I_ImmutableMap {
 	protected Map  me = null;
 	
@@ -54,4 +55,14 @@ public class ImmutableMapWrapper implements I_ImmutableMap {
 	public I_Iterator keys() {
 		return this.getIterator();
 	}
+	
+	public boolean equals(Object o) {
+		if (o instanceof MapWrapper) {
+			if (me.equals( ((MapWrapper) o).me )) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 }

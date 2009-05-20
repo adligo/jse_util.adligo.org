@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.adligo.i.util.client.I_Collection;
 import org.adligo.i.util.client.I_Iterator;
 
+@SuppressWarnings("unchecked")
 public class CollectionWrapper implements I_Collection {
 	private Collection col = null;
 	

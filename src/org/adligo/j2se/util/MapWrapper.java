@@ -1,14 +1,11 @@
 package org.adligo.j2se.util;
 
-import java.util.Collection;
 import java.util.Map;
 
-import org.adligo.i.util.client.I_Iterator;
 import org.adligo.i.util.client.I_Map;
-import org.adligo.i.util.client.IteratorFactory;
 
+@SuppressWarnings("unchecked")
 public class MapWrapper extends ImmutableMapWrapper implements I_Map {
-	
 	
 	public MapWrapper(Map p) {
 		super(p);
@@ -39,4 +36,5 @@ public class MapWrapper extends ImmutableMapWrapper implements I_Map {
 		return me;
 	}
 	
+
 }
