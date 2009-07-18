@@ -1,6 +1,5 @@
 package org.adligo.j2se.util;
 
-import org.adligo.i.util.client.I_Map;
 import org.adligo.i.util.client.Platform;
 
 
