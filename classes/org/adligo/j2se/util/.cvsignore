@@ -1,0 +1,10 @@
+J2SEIteratorFactory.class
+MapWrapper.class
+J2SEPropertyFactory.class
+J2SECollectionFactory.class
+J2SEMapFactory.class
+CollectionWrapper.class
+ImmutableMapWrapper.class
+J2SEImmutableMapFactory.class
+IteratorWrapper.class
+J2SEPlatform.class
