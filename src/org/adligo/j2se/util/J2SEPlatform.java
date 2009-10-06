@@ -1,5 +1,7 @@
 package org.adligo.j2se.util;
 
+import java.util.logging.LoggingPermission;
+
 import org.adligo.i.util.client.Platform;
 
 
@@ -16,6 +18,7 @@ public class J2SEPlatform extends Platform {
 			J2SECollectionFactory.init();
 			J2SEMapFactory.init();
 			J2SEPropertyFactory.init();
+			J2SEThreadPopulatorFactory.init();
 			isInit = true;
 		}
 	}
