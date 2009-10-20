@@ -19,6 +19,7 @@ public class J2SEPlatform extends Platform {
 			J2SEMapFactory.init();
 			J2SEPropertyFactory.init();
 			J2SEThreadPopulatorFactory.init();
+			J2SETextFormatter.init();
 			isInit = true;
 		}
 	}
