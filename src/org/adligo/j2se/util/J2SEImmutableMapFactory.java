@@ -10,8 +10,8 @@ public class J2SEImmutableMapFactory implements I_Factory {
 
 	public Object createNew(Object p) {
 		if (p == null) {
-			return new ImmutableMapWrapper(new HashMap());
+			return new ImmutableMapWrapper(new HashMap<Object,Object>());
 		}
-		return new ImmutableMapWrapper((Map) ((I_Map) p).getWrapped());
+		return new ImmutableMapWrapper((Map<?,?>) ((I_Map) p).getWrapped());
 	}
 }

@@ -1,7 +1,5 @@
 package org.adligo.j2se.util;
 
-import java.util.logging.LoggingPermission;
-
 import org.adligo.i.util.client.Platform;
 
 
@@ -13,15 +11,20 @@ public class J2SEPlatform extends Platform {
 	 * before anyother code can be used!
 	 */
 	public static synchronized final void init() throws Exception {
+		if (!J2SECollectionFactory.isInit()) {
+			J2SECollectionFactory.init();
+		}
+		if (!J2SEMapFactory.isInit()) {
+			J2SEMapFactory.init();
+		}
 		if (!isInit) {
 			J2SEIteratorFactory.init();
-			J2SECollectionFactory.init();
-			J2SEMapFactory.init();
 			J2SEPropertyFactory.init();
 			J2SEThreadPopulatorFactory.init();
 			J2SETextFormatter.init();
 			isInit = true;
 		}
+		
 	}
 	
 	protected static boolean isLogEnabled() {

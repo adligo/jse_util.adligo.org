@@ -12,9 +12,9 @@ public class J2SEMapFactory extends MapFactory implements I_Factory {
 	
 	public Object createNew(Object p) {
 		if (p == null) {
-			return new MapWrapper(new HashMap());
+			return new MapWrapper(new HashMap<Object,Object>());
 		}
-		return new MapWrapper((Map) p);
+		return new MapWrapper((Map<?,?>) p);
 	}
 
 	protected static void init() throws Exception {
