@@ -16,7 +16,7 @@ public class J2SEThreadPopulatorFactory extends ThreadPopulatorFactory implement
 	}
 
 	
-	protected static void init() {
+	protected static void init() throws Exception {
 		ThreadPopulatorFactory.init(INSTANCE);
 	}
 	
