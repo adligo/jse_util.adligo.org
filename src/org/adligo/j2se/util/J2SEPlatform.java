@@ -4,8 +4,7 @@ import org.adligo.i.util.client.Platform;
 
 
 public class J2SEPlatform extends Platform {
-	private static boolean isInit = false;
-
+	
 	/**
 	 * this must be called by the main EntryPoint first
 	 * before anyother code can be used!
@@ -17,14 +16,18 @@ public class J2SEPlatform extends Platform {
 		if (!J2SEMapFactory.isInit()) {
 			J2SEMapFactory.init();
 		}
-		if (!isInit) {
+		if (!J2SEIteratorFactory.isInit()) {
 			J2SEIteratorFactory.init();
-			J2SEPropertyFactory.init();
-			J2SEThreadPopulatorFactory.init();
-			J2SETextFormatter.init();
-			isInit = true;
 		}
-		
+		if (!J2SEPropertyFactory.isInit()) {
+			J2SEPropertyFactory.init();
+		}
+		if (!J2SEThreadPopulatorFactory.isInit()) {
+			J2SEThreadPopulatorFactory.init();
+		}
+		if (!J2SETextFormatter.isInit()) {
+			J2SETextFormatter.init();
+		}
 	}
 	
 	protected static boolean isLogEnabled() {

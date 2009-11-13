@@ -49,7 +49,7 @@ public class J2SEPropertyFactory extends PropertyFactory implements I_Factory {
 			
 		} catch (Exception x) {
 			PropertyFileReadException ex = new PropertyFileReadException(
-					"Error reading property file " + propClasspathName);
+					"Error reading property file '" + propClasspathName + "'");
 			ex.initCause(x);
 			
 			Event e = new Event();
