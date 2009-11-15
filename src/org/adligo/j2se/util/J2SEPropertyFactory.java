@@ -24,10 +24,13 @@ public class J2SEPropertyFactory extends PropertyFactory implements I_Factory {
 		ListenerValueObject list = (ListenerValueObject) p;
 		String propClasspathName = (String) list.getValue();
 		I_Listener callback = list.getListener();
+		String fileSystemFileName = null;
+		I_Map fileContent = null;
 		
 		try {
 			Class<?> c = this.getClass();
 	        URL r = c.getResource(propClasspathName);
+	        fileSystemFileName = r.getFile();
 	        InputStream in = r.openStream();
 			
 			/**
@@ -43,13 +46,17 @@ public class J2SEPropertyFactory extends PropertyFactory implements I_Factory {
 			}
 			I_Map map = MapFactory.create();
 			StringUtils.parse(sb.toString(), map);
+			fileContent = map;
+			
 			Event e = new Event();
 			e.setValue(map);
 			callback.onEvent(e);
 			
 		} catch (Exception x) {
 			PropertyFileReadException ex = new PropertyFileReadException(
-					"Error reading property file '" + propClasspathName + "'");
+					"Error reading property file '" + propClasspathName + "' " +
+					" file system name '" + fileSystemFileName + "' file content; \n" + 
+					fileContent);
 			ex.initCause(x);
 			
 			Event e = new Event();

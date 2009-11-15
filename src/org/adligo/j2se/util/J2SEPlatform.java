@@ -5,11 +5,17 @@ import org.adligo.i.util.client.Platform;
 
 public class J2SEPlatform extends Platform {
 	
+	private static boolean log = false;
 	/**
 	 * this must be called by the main EntryPoint first
 	 * before anyother code can be used!
 	 */
 	public static synchronized final void init() throws Exception {
+		init(false);
+	}
+	public static synchronized final void init(boolean p) throws Exception {
+		setLogEnabled(p);
+		
 		if (!J2SECollectionFactory.isInit()) {
 			J2SECollectionFactory.init();
 		}
@@ -30,8 +36,12 @@ public class J2SEPlatform extends Platform {
 		}
 	}
 	
-	protected static boolean isLogEnabled() {
-		return true;
+	public static boolean isLogEnabled() {
+		return log;
+	}
+	
+	public static void setLogEnabled(boolean p) {
+		log = p;
 	}
 	
 	protected static void log(String p){
