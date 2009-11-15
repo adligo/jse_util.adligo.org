@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
+import org.adligo.i.util.client.ClassUtils;
 import org.adligo.i.util.client.I_Map;
 
 @SuppressWarnings("unchecked")
@@ -42,24 +43,12 @@ public class MapWrapper extends ImmutableMapWrapper implements I_Map {
 
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append(this.getClass().getName());
-		sb.append(" [[[[items[[[");
-		toString(me, sb);
-		sb.append("]]]end_map_items]]]]");
-		return sb.toString();
+		if (me == null) {
+			return MapWrapper.class.getName() + " []";
+		}
+		return ClassUtils.getClassShortName(MapWrapper.class) +  me.toString();
 	}
 	
-	public static void  toString(Map<?,?> p, StringBuilder sb) {
-		Set<?>  set = p.entrySet();
-		Iterator<?> it = set.iterator();
-		while (it.hasNext()) {
-			Entry<?,?> e = (Entry<?,?>) it.next();
-			sb.append(e.getKey());
-			sb.append(",");
-			sb.append(e.getValue());
-		}
-	}
 	
 
 }
