@@ -60,7 +60,8 @@ public class J2SEPropertyFactory extends PropertyFactory implements I_Factory {
 			ex.initCause(x);
 			
 			Event e = new Event();
-			e.setValue(ex);
+			e.setValue(MapFactory.create());
+			e.setException(ex);
 			callback.onEvent(e);
 		}
 		

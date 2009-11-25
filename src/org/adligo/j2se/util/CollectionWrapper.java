@@ -10,6 +10,9 @@ public class CollectionWrapper implements I_Collection {
 	private Collection col = null;
 	
 	public CollectionWrapper(Collection c) {
+		if (c == null) {
+			throw new NullPointerException("" + this.getClass() + " can't accept a null constructor argument.");
+		}
 		col = c;
 	}
 	
@@ -34,4 +37,21 @@ public class CollectionWrapper implements I_Collection {
 	public int size() {
 		return col.size();
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return col.equals(obj);
+	}
+
+	@Override
+	public int hashCode() {
+		return col.hashCode();
+	}
+
+	@Override
+	public String toString() {
+		return col.toString();
+	}
+	
+	
 }

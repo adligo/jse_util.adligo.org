@@ -12,6 +12,10 @@ public class ImmutableMapWrapper implements I_ImmutableMap {
 	protected Map  me = null;
 	
 	public ImmutableMapWrapper(Map p) {
+		if (p == null) {
+			throw new NullPointerException("" + this.getClass() + 
+					" can't accept a null constructor argument.");
+		}
 		me = p;
 	}
 	
@@ -63,6 +67,18 @@ public class ImmutableMapWrapper implements I_ImmutableMap {
 			}
 		}
 		return false;
+	}
+
+
+	@Override
+	public int hashCode() {
+		return me.hashCode();
+	}
+
+
+	@Override
+	public String toString() {
+		return me.toString();
 	}
 	
 }
