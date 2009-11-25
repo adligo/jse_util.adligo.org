@@ -1,5 +1,6 @@
 package org.adligo.j2se.util;
 
+import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
 
@@ -57,6 +58,8 @@ public class J2SEPropertyFactory extends PropertyFactory implements I_Factory {
 					"Error reading property file '" + propClasspathName + "' " +
 					" file system name '" + fileSystemFileName + "' file content; \n" + 
 					fileContent);
+			ex.setFileName(propClasspathName);
+			ex.setAttemptedSystemFileName(fileSystemFileName);
 			ex.initCause(x);
 			
 			Event e = new Event();
