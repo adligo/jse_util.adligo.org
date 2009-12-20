@@ -52,6 +52,11 @@ public class CollectionWrapper implements I_Collection {
 	public String toString() {
 		return col.toString();
 	}
+
+	@Override
+	public boolean contains(Object other) {
+		return col.contains(other);
+	}
 	
 	
 }
