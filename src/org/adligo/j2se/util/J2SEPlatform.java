@@ -15,7 +15,9 @@ public class J2SEPlatform extends Platform {
 	}
 	public static synchronized final void init(boolean p) throws Exception {
 		setLogEnabled(p);
-		
+		if (!J2SEInstanceForName.isInit()) {
+			J2SEInstanceForName.init();
+		}
 		if (!J2SECollectionFactory.isInit()) {
 			J2SECollectionFactory.init();
 		}
