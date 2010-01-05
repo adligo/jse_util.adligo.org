@@ -10,3 +10,4 @@ ImmutableMapWrapper.class
 J2SEImmutableMapFactory.class
 IteratorWrapper.class
 J2SEPlatform.class
+J2SEInstanceForName.class
