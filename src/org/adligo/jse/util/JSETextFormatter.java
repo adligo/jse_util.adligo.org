@@ -1,4 +1,4 @@
-package org.adligo.j2se.util;
+package org.adligo.jse.util;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -6,9 +6,9 @@ import java.util.Date;
 
 import org.adligo.i.util.client.TextFormatter;
 
-public class J2SETextFormatter extends TextFormatter {
+public class JSETextFormatter extends TextFormatter {
 	protected static void init() throws Exception {
-		TextFormatter.setDelegate(new J2SETextFormatter());
+		TextFormatter.setDelegate(new JSETextFormatter());
 	}
 
 	

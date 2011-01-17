@@ -1,4 +1,4 @@
-package org.adligo.j2se.util;
+package org.adligo.jse.util;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,7 +6,7 @@ import java.util.Collection;
 import org.adligo.i.util.client.CollectionFactory;
 import org.adligo.i.util.client.I_Factory;
 
-public class J2SECollectionFactory extends CollectionFactory implements I_Factory {
+public class JSECollectionFactory extends CollectionFactory implements I_Factory {
 	
 	public Object createNew(Object p) {
 		if (p == null) {
@@ -16,6 +16,6 @@ public class J2SECollectionFactory extends CollectionFactory implements I_Factor
 	}
 
 	protected static void init() throws Exception {
-		init(new J2SECollectionFactory());
+		init(new JSECollectionFactory());
 	}
 }

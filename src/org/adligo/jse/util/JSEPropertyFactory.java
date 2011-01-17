@@ -1,4 +1,4 @@
-package org.adligo.j2se.util;
+package org.adligo.jse.util;
 
 import java.io.File;
 import java.io.InputStream;
@@ -14,7 +14,7 @@ import org.adligo.i.util.client.PropertyFactory;
 import org.adligo.i.util.client.PropertyFileReadException;
 import org.adligo.i.util.client.StringUtils;
 
-public class J2SEPropertyFactory extends PropertyFactory implements I_Factory {
+public class JSEPropertyFactory extends PropertyFactory implements I_Factory {
 	/**
 	 * get a file from the relative url
 	 * this is done in a single threaded synchronus way
@@ -72,7 +72,7 @@ public class J2SEPropertyFactory extends PropertyFactory implements I_Factory {
 	}
 	
 	protected static void init() throws Exception {
-		init(new J2SEPropertyFactory());
+		init(new JSEPropertyFactory());
 	}
 }
 

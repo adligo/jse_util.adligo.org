@@ -1,9 +1,9 @@
-package org.adligo.j2se.util;
+package org.adligo.jse.util;
 
 import org.adligo.i.util.client.I_Factory;
 import org.adligo.i.util.client.InstanceForName;
 
-public class J2SEInstanceForName extends InstanceForName implements I_Factory {
+public class JSEInstanceForName extends InstanceForName implements I_Factory {
 
 	@Override
 	public Object createNew(Object p) {
@@ -17,7 +17,7 @@ public class J2SEInstanceForName extends InstanceForName implements I_Factory {
 	}
 	
 	public static void init() throws Exception {
-		InstanceForName.init(new J2SEInstanceForName());
+		InstanceForName.init(new JSEInstanceForName());
 	}
 
 }

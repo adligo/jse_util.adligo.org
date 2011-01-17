@@ -1,14 +1,14 @@
-package org.adligo.j2se.util;
+package org.adligo.jse.util;
 
 import org.adligo.i.util.client.I_ThreadContainer;
 import org.adligo.i.util.client.I_ThreadPopulator;
 import org.adligo.i.util.client.ThreadPopulatorFactory;
 
-public class J2SEThreadPopulatorFactory extends ThreadPopulatorFactory implements I_ThreadPopulator {
-	private static final J2SEThreadPopulatorFactory INSTANCE = new J2SEThreadPopulatorFactory();
+public class JSEThreadPopulatorFactory extends ThreadPopulatorFactory implements I_ThreadPopulator {
+	private static final JSEThreadPopulatorFactory INSTANCE = new JSEThreadPopulatorFactory();
 	
 	
-	private J2SEThreadPopulatorFactory() {}
+	private JSEThreadPopulatorFactory() {}
 	
 	@Override
 	public void populateThread(I_ThreadContainer threadHolder) {

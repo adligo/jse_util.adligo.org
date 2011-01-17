@@ -1,4 +1,4 @@
-package org.adligo.j2se.util;
+package org.adligo.jse.util;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import org.adligo.i.util.client.I_Factory;
 import org.adligo.i.util.client.MapFactory;
 
 
-public class J2SEMapFactory extends MapFactory implements I_Factory {
+public class JSEMapFactory extends MapFactory implements I_Factory {
 
 	
 	public Object createNew(Object p) {
@@ -18,6 +18,6 @@ public class J2SEMapFactory extends MapFactory implements I_Factory {
 	}
 
 	protected static void init() throws Exception {
-		init(new J2SEMapFactory(), new J2SEImmutableMapFactory());
+		init(new JSEMapFactory(), new JSEImmutableMapFactory());
 	}
 }

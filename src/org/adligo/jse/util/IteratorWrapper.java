@@ -1,4 +1,4 @@
-package org.adligo.j2se.util;
+package org.adligo.jse.util;
 
 import java.util.Iterator;
 import org.adligo.i.util.client.I_Iterator;
