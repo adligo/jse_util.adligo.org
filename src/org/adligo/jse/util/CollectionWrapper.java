@@ -7,8 +7,10 @@ import org.adligo.i.util.client.I_Iterator;
 
 @SuppressWarnings("unchecked")
 public class CollectionWrapper implements I_Collection {
+	@SuppressWarnings("rawtypes")
 	private Collection col = null;
 	
+	@SuppressWarnings("rawtypes")
 	public CollectionWrapper(Collection c) {
 		if (c == null) {
 			throw new NullPointerException("" + this.getClass() + " can't accept a null constructor argument.");

@@ -5,8 +5,10 @@ import org.adligo.i.util.client.I_Iterator;
 
 
 public class IteratorWrapper implements I_Iterator {
+	@SuppressWarnings("rawtypes")
 	public Iterator me = null;
 	
+	@SuppressWarnings("rawtypes")
 	public IteratorWrapper(Iterator p) {
 		me = p;
 	}

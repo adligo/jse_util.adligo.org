@@ -18,6 +18,6 @@ public class JSEMapFactory extends MapFactory implements I_Factory {
 	}
 
 	protected static void init() throws Exception {
-		init(new JSEMapFactory(), new JSEImmutableMapFactory());
+		init(new JSEMapFactory(), new JSEImmutableMapFactory(), new JSEConcurrentMapFactory());
 	}
 }

@@ -7,11 +7,11 @@ import org.adligo.i.util.client.I_Map;
 @SuppressWarnings("unchecked")
 public class MapWrapper extends ImmutableMapWrapper implements I_Map {
 	
-	public MapWrapper(Map p) {
+	public MapWrapper(@SuppressWarnings("rawtypes") Map p) {
 		super(p);
 	}
 	
-	public void putAll(Map m) {
+	public void putAll(@SuppressWarnings("rawtypes") Map m) {
 		me.putAll(m);
 	}
 
