@@ -1,6 +1,13 @@
 package org.adligo.jse.util;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 
 import org.adligo.i.util.client.Event;
@@ -22,27 +29,40 @@ public class JSEPropertyFactory extends PropertyFactory implements I_Factory {
 	 */
 	public Object createNew(Object p) {
 		ListenerValueObject list = (ListenerValueObject) p;
-		String propClasspathName = (String) list.getValue();
+		String fileName = (String) list.getValue();
 		I_Listener callback = list.getListener();
 		String fileSystemFileName = null;
 		I_Map fileContent = null;
 		
+		//try the filesystem first
 		try {
-			Class<?> c = this.getClass();
-	        URL r = c.getResource(propClasspathName);
-	        fileSystemFileName = r.getFile();
-	        InputStream in = r.openStream();
-			
-			/**
-			 * this will only read askii and not 
-			 * extended utf8 (chineese, sanskrit exc)
-			 */
-			StringBuffer sb = new StringBuffer();
-			byte [] b = new byte[1];
-			if (in != null) {
-				while ( (in.read(b)) != -1) {
-					sb.append((char) b[0]);
-				}
+			BufferedReader br = null;
+			File file = new File(fileName);
+			if (file.isFile()) {
+				br = new BufferedReader(new InputStreamReader(
+	                    new FileInputStream(file),"UTF8"));
+			} else {
+				//try from the classpath
+				Class<?> c = this.getClass();
+		        URL r = c.getResource(fileName);
+		        if (r == null) {
+		        	setUpError(fileName, callback, fileSystemFileName, fileContent, 
+		        			new FileNotFoundException("no file found in classpath with " +
+		        					fileName));
+		        	return callback;
+		        }
+		        fileSystemFileName = r.getFile();
+		        InputStream in = r.openStream();
+				
+		         br = new BufferedReader(new InputStreamReader(
+	                    in,"UTF8"));
+			}
+			StringBuilder sb = new StringBuilder();
+			String line = br.readLine();
+			while (line != null) {
+				sb.append(line);
+				sb.append('\n');
+				line = br.readLine();
 			}
 			I_Map map = MapFactory.create();
 			StringUtils.parse(sb.toString(), map);
@@ -51,23 +71,31 @@ public class JSEPropertyFactory extends PropertyFactory implements I_Factory {
 			Event e = new Event();
 			e.setValue(map);
 			callback.onEvent(e);
-			
-		} catch (Exception x) {
-			PropertyFileReadException ex = new PropertyFileReadException(
-					"Error reading property file '" + propClasspathName + "' " +
-					" file system name '" + fileSystemFileName + "' file content; \n" + 
-					fileContent);
-			ex.setFileName(propClasspathName);
-			ex.setAttemptedSystemFileName(fileSystemFileName);
-			ex.initCause(x);
-			
-			Event e = new Event();
-			e.setValue(MapFactory.create());
-			e.setException(ex);
-			callback.onEvent(e);
+		} catch (UnsupportedEncodingException x) {
+			setUpError(fileName, callback, fileSystemFileName, fileContent, x);
+		} catch (FileNotFoundException x) {
+			setUpError(fileName, callback, fileSystemFileName, fileContent, x);
+		} catch (IOException x) {
+			setUpError(fileName, callback, fileSystemFileName, fileContent, x);
 		}
-		
 		return callback;
+	}
+
+	private void setUpError(String fileName, I_Listener callback,
+			String fileSystemFileName, I_Map fileContent,
+			Exception x) {
+		PropertyFileReadException ex = new PropertyFileReadException(
+				"Error reading property file '" + fileName + "' " +
+				" file system name '" + fileSystemFileName + "' file content; \n" + 
+				fileContent);
+		ex.setFileName(fileName);
+		ex.setAttemptedSystemFileName(fileSystemFileName);
+		ex.initCause(x);
+		
+		Event e = new Event();
+		e.setValue(MapFactory.create());
+		e.setException(ex);
+		callback.onEvent(e);
 	}
 	
 	protected static void init() throws Exception {
