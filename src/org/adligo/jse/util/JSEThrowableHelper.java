@@ -1,15 +1,10 @@
 package org.adligo.jse.util;
 
-import java.io.PrintWriter;
-
-import org.adligo.i.log.client.models.StringWriter;
 import org.adligo.i.util.client.I_ThrowableHelper;
-import org.adligo.i.util.client.InstanceForName;
-import org.adligo.i.util.client.ThrowableHelperFactory;
 
-public class JSEThrowableHelper extends ThrowableHelperFactory implements I_ThrowableHelper {
+public class JSEThrowableHelper implements I_ThrowableHelper {
 
-	private JSEThrowableHelper() {}
+	protected JSEThrowableHelper() {}
 	
 	@Override
 	public void fillInStackTrace(Throwable p) {
@@ -37,8 +32,7 @@ public class JSEThrowableHelper extends ThrowableHelperFactory implements I_Thro
         }
         return buf.toString();
 	}
+	
 
-	public static void init() throws Exception {
-		ThrowableHelperFactory.init(new JSEThrowableHelper());
-	}
+
 }
