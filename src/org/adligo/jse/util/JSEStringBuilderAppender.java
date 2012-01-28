@@ -4,9 +4,9 @@ import org.adligo.i.util.client.I_StringAppender;
 
 public class JSEStringBuilderAppender implements I_StringAppender {
 	private StringBuilder sb;
-	
-	public JSEStringBuilderAppender(StringBuilder p) {
-		sb = p;
+
+	public JSEStringBuilderAppender() {
+		sb = new StringBuilder();
 	}
 
 	@Override

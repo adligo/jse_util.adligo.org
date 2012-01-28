@@ -15,7 +15,7 @@ public class JSEThrowableHelper implements I_ThrowableHelper {
 	@Override
 	public String getStackTraceAsString(Throwable throwable) {
 		return getStackTraceAsString("\t", throwable, "\n", 
-					new JSEStringBuilderAppender(new StringBuilder()));
+					new JSEStringBuilderAppender());
 	}
 
 	@Override
