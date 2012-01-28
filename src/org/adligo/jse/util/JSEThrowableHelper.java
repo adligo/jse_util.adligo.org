@@ -1,6 +1,6 @@
 package org.adligo.jse.util;
 
-import org.adligo.i.util.client.I_StringAppender;
+import org.adligo.i.util.client.I_Appender;
 import org.adligo.i.util.client.I_ThrowableHelper;
 
 public class JSEThrowableHelper implements I_ThrowableHelper {
@@ -15,12 +15,12 @@ public class JSEThrowableHelper implements I_ThrowableHelper {
 	@Override
 	public String getStackTraceAsString(Throwable throwable) {
 		return getStackTraceAsString("\t", throwable, "\n", 
-					new JSEStringBuilderAppender());
+					new JSESAppender());
 	}
 
 	@Override
 	public String getStackTraceAsString(String preText, Throwable throwable,
-			String lineFeed, I_StringAppender buf) {
+			String lineFeed, I_Appender buf) {
 		if(throwable != null) {
         	StackTraceElement [] trace = throwable.getStackTrace();
         	buf.append(preText);
