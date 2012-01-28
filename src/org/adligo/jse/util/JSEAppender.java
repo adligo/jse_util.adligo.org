@@ -2,10 +2,10 @@ package org.adligo.jse.util;
 
 import org.adligo.i.util.client.I_Appender;
 
-public class JSESAppender implements I_Appender {
+public class JSEAppender implements I_Appender {
 	private StringBuilder sb;
 
-	JSESAppender() {
+	JSEAppender() {
 		sb = new StringBuilder();
 	}
 
