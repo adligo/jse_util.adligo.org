@@ -1,5 +1,6 @@
 package org.adligo.jse.util;
 
+import org.adligo.i.util.client.I_StringAppender;
 import org.adligo.i.util.client.I_ThrowableHelper;
 
 public class JSEThrowableHelper implements I_ThrowableHelper {
@@ -13,21 +14,30 @@ public class JSEThrowableHelper implements I_ThrowableHelper {
 
 	@Override
 	public String getStackTraceAsString(Throwable throwable) {
-		StringBuilder buf = new StringBuilder();
-		
-        if(throwable != null) {
+		return getStackTraceAsString("\t", throwable, "\n", 
+					new JSEStringBuilderAppender(new StringBuilder()));
+	}
+
+	@Override
+	public String getStackTraceAsString(String preText, Throwable throwable,
+			String lineFeed, I_StringAppender buf) {
+		if(throwable != null) {
         	StackTraceElement [] trace = throwable.getStackTrace();
+        	buf.append(preText);
         	buf.append(" <");
             buf.append(throwable.toString());
             buf.append(">");
 
-            buf.append("\n");
+            buf.append(lineFeed);
            
             
             for (int j = 0; j < trace.length; j++) {
-            	buf.append("\t at ");
+            	//do twice as many indents for the stack trace
+            	buf.append(preText);
+            	buf.append(preText);
+            	buf.append(" at ");
             	buf.append(trace[j].toString());
-            	buf.append("\n");
+            	buf.append(lineFeed);
 			}
         }
         return buf.toString();
