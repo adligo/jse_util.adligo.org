@@ -14,4 +14,8 @@ public class JSEStringBuilderAppender implements I_StringAppender {
 		sb.append(p);
 	}
 	
+	@Override
+	public String toString() {
+		return sb.toString();
+	}
 }

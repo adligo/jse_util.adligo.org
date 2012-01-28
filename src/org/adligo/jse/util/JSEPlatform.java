@@ -15,6 +15,9 @@ public class JSEPlatform extends Platform {
 	}
 	public static synchronized final void init(boolean p) throws Exception {
 		setLogEnabled(p);
+		if (!JSEAppenderFactory.isInit()) {
+			JSEAppenderFactory.init();
+		}
 		if (!JSEThrowableHelperFactory.isInit()) {
 			JSEThrowableHelperFactory.init();
 		}
