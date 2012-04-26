@@ -13,13 +13,7 @@ public class JSEThrowableHelper implements I_ThrowableHelper {
 	}
 
 	@Override
-	public String getStackTraceAsString(Throwable throwable) {
-		return getStackTraceAsString("\t", throwable, "\n", 
-					new JSEAppender());
-	}
-
-	@Override
-	public String getStackTraceAsString(String preText, Throwable throwable,
+	public void appendStackTracesString(String preText, Throwable throwable,
 			String lineFeed, I_Appender buf) {
 		if(throwable != null) {
         	StackTraceElement [] trace = throwable.getStackTrace();
@@ -39,8 +33,11 @@ public class JSEThrowableHelper implements I_ThrowableHelper {
             	buf.append(trace[j].toString());
             	buf.append(lineFeed);
 			}
+            Throwable cause = throwable.getCause();
+            if (cause != null) {
+            	appendStackTracesString(preText + preText, cause, lineFeed, buf);
+            }
         }
-        return buf.toString();
 	}
 	
 
