@@ -42,6 +42,9 @@ public class JSEPlatform extends Platform {
 		if (!JSETextFormatter.isInit()) {
 			JSETextFormatter.init();
 		}
+		if (!JSEDateTimeParserFactory.isInit()) {
+			JSEDateTimeParserFactory.init();
+		}
 	}
 	
 	public static boolean isLogEnabled() {
