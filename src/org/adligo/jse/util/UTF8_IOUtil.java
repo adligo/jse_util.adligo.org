@@ -5,30 +5,29 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.nio.CharBuffer;
 
 public class UTF8_IOUtil {
-	public static String getXMLContent(String sFileName) throws IOException {
+	public static String getXMLContent(String javaPath) throws IOException {
 	 	Class<?> c = UTF8_IOUtil.class.getClass();
-        URL r = c.getResource(sFileName);
+        URL r = c.getResource(javaPath);
         if (r == null) {
         	 IllegalArgumentException toThrow = new IllegalArgumentException(
-       			  "THERE_WAS_A_PROBLEM_PARSING_OR_COULD_NOT_FIND_RESOURCE" + sFileName);
+       			  "THERE_WAS_A_PROBLEM_PARSING_OR_COULD_NOT_FIND_RESOURCE" + javaPath);
         	 throw toThrow;
         }
-        InputStream is = r.openStream();
-        byte b[] = new byte[1];
-        int counter = 0;
-        while (is.read(b) != -1) {
-        	counter ++;
-        }
-        is.close();
-        
-        is = r.openStream();
-        InputStreamReader isr = new InputStreamReader(is);
        
-        CharBuffer cb = CharBuffer.allocate(counter);
+        InputStream is = r.openStream();
+        return getXMLContent(is);
+	}
+
+	public static String getXMLContent(InputStream is)
+			throws IOException, UnsupportedEncodingException {
+		InputStreamReader isr = new InputStreamReader(is);
+       
+        CharBuffer cb = CharBuffer.allocate(10000);
         isr.read(cb);
         String result = new String(cb.array()).trim();
         result = new String(result.getBytes(),"UTF-8");
