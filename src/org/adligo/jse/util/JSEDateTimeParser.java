@@ -6,8 +6,6 @@ import java.text.SimpleDateFormat;
 
 import org.adligo.i.util.client.I_DateTimeParser;
 
-import com.sun.xml.internal.txw2.IllegalAnnotationException;
-
 public class JSEDateTimeParser implements I_DateTimeParser {
 
 	@Override
@@ -20,7 +18,7 @@ public class JSEDateTimeParser implements I_DateTimeParser {
 			return date.getTime();
 		} catch (ParseException e) {
 			e.printStackTrace();
-			throw new IllegalAnnotationException(e);
+			throw new IllegalArgumentException(e);
 		}
 	}
 
