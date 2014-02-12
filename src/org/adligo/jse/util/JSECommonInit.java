@@ -1,8 +1,8 @@
 package org.adligo.jse.util;
 
-import org.adligo.i.log.client.Log;
-import org.adligo.i.log.client.LogFactory;
-import org.adligo.i.log.client.LogPlatform;
+import org.adligo.i.log.shared.Log;
+import org.adligo.i.log.shared.LogFactory;
+import org.adligo.i.log.shared.LogPlatform;
 
 public class JSECommonInit {
 	private static final Log log = LogFactory.getLog(JSECommonInit.class);

@@ -1,8 +1,8 @@
 package org.adligo.jse.util;
 
-import org.adligo.i.util.client.I_ThreadContainer;
-import org.adligo.i.util.client.I_ThreadPopulator;
-import org.adligo.i.util.client.ThreadPopulatorFactory;
+import org.adligo.i.util.shared.I_ThreadContainer;
+import org.adligo.i.util.shared.I_ThreadPopulator;
+import org.adligo.i.util.shared.ThreadPopulatorFactory;
 
 public class JSEThreadPopulatorFactory extends ThreadPopulatorFactory implements I_ThreadPopulator {
 	private static final JSEThreadPopulatorFactory INSTANCE = new JSEThreadPopulatorFactory();

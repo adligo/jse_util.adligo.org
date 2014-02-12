@@ -2,8 +2,8 @@ package org.adligo.jse.util;
 
 import java.util.Collection;
 
-import org.adligo.i.util.client.I_Factory;
-import org.adligo.i.util.client.IteratorFactory;
+import org.adligo.i.util.shared.I_Factory;
+import org.adligo.i.util.shared.IteratorFactory;
 
 public class JSEIteratorFactory extends IteratorFactory implements I_Factory {
 	

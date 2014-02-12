@@ -3,8 +3,8 @@ package org.adligo.jse.util;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.adligo.i.util.client.CollectionFactory;
-import org.adligo.i.util.client.I_Factory;
+import org.adligo.i.util.shared.CollectionFactory;
+import org.adligo.i.util.shared.I_Factory;
 
 public class JSECollectionFactory extends CollectionFactory implements I_Factory {
 	

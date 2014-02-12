@@ -4,7 +4,7 @@ import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import org.adligo.i.util.client.I_DateTimeParser;
+import org.adligo.i.util.shared.I_DateTimeParser;
 
 public class JSEDateTimeParser implements I_DateTimeParser {
 

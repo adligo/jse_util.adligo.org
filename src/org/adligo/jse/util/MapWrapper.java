@@ -2,7 +2,7 @@ package org.adligo.jse.util;
 
 import java.util.Map;
 
-import org.adligo.i.util.client.I_Map;
+import org.adligo.i.util.shared.I_Map;
 
 @SuppressWarnings("unchecked")
 public class MapWrapper extends ImmutableMapWrapper implements I_Map {

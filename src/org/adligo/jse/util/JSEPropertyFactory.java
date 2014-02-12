@@ -10,15 +10,15 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 
-import org.adligo.i.util.client.Event;
-import org.adligo.i.util.client.I_Factory;
-import org.adligo.i.util.client.I_Listener;
-import org.adligo.i.util.client.I_Map;
-import org.adligo.i.util.client.ListenerValueObject;
-import org.adligo.i.util.client.MapFactory;
-import org.adligo.i.util.client.PropertyFactory;
-import org.adligo.i.util.client.PropertyFileReadException;
-import org.adligo.i.util.client.StringUtils;
+import org.adligo.i.util.shared.Event;
+import org.adligo.i.util.shared.I_Factory;
+import org.adligo.i.util.shared.I_Listener;
+import org.adligo.i.util.shared.I_Map;
+import org.adligo.i.util.shared.ListenerValueObject;
+import org.adligo.i.util.shared.MapFactory;
+import org.adligo.i.util.shared.PropertyFactory;
+import org.adligo.i.util.shared.PropertyFileReadException;
+import org.adligo.i.util.shared.StringUtils;
 
 public class JSEPropertyFactory extends PropertyFactory implements I_Factory {
 	/**

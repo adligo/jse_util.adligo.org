@@ -1,6 +1,6 @@
 package org.adligo.jse.util;
 
-import org.adligo.i.util.client.I_Appender;
+import org.adligo.i.util.shared.I_Appender;
 
 public class JSEAppender implements I_Appender {
 	private StringBuilder sb;

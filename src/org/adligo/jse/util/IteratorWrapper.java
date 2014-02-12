@@ -1,7 +1,8 @@
 package org.adligo.jse.util;
 
 import java.util.Iterator;
-import org.adligo.i.util.client.I_Iterator;
+
+import org.adligo.i.util.shared.I_Iterator;
 
 
 public class IteratorWrapper implements I_Iterator {

@@ -2,8 +2,8 @@ package org.adligo.jse.util;
 
 import java.util.Collection;
 
-import org.adligo.i.util.client.I_Collection;
-import org.adligo.i.util.client.I_Iterator;
+import org.adligo.i.util.shared.I_Collection;
+import org.adligo.i.util.shared.I_Iterator;
 
 @SuppressWarnings("unchecked")
 public class CollectionWrapper implements I_Collection {

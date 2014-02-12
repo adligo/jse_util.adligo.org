@@ -3,8 +3,8 @@ package org.adligo.jse.util;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.adligo.i.util.client.I_Factory;
-import org.adligo.i.util.client.I_Map;
+import org.adligo.i.util.shared.I_Factory;
+import org.adligo.i.util.shared.I_Map;
 
 public class JSEConcurrentMapFactory implements I_Factory {
 

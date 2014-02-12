@@ -3,9 +3,9 @@ package org.adligo.jse.util;
 import java.util.Collection;
 import java.util.Map;
 
-import org.adligo.i.util.client.I_ImmutableMap;
-import org.adligo.i.util.client.I_Iterator;
-import org.adligo.i.util.client.IteratorFactory;
+import org.adligo.i.util.shared.I_ImmutableMap;
+import org.adligo.i.util.shared.I_Iterator;
+import org.adligo.i.util.shared.IteratorFactory;
 
 public class ImmutableMapWrapper implements I_ImmutableMap {
 	@SuppressWarnings("rawtypes")

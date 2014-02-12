@@ -1,6 +1,6 @@
 package org.adligo.jse.util;
 
-import org.adligo.i.util.client.ThrowableHelperFactory;
+import org.adligo.i.util.shared.ThrowableHelperFactory;
 
 public class JSEThrowableHelperFactory extends ThrowableHelperFactory {
 

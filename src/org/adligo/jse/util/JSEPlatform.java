@@ -1,6 +1,6 @@
 package org.adligo.jse.util;
 
-import org.adligo.i.util.client.Platform;
+import org.adligo.i.util.shared.Platform;
 
 
 public class JSEPlatform extends Platform {

@@ -1,7 +1,7 @@
 package org.adligo.jse.util;
 
-import org.adligo.i.util.client.DateTimeParserFactory;
-import org.adligo.i.util.client.I_Factory;
+import org.adligo.i.util.shared.DateTimeParserFactory;
+import org.adligo.i.util.shared.I_Factory;
 
 public class JSEDateTimeParserFactory extends DateTimeParserFactory implements I_Factory {
 

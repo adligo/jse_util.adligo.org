@@ -3,8 +3,8 @@ package org.adligo.jse.util;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.adligo.i.util.client.I_Factory;
-import org.adligo.i.util.client.MapFactory;
+import org.adligo.i.util.shared.I_Factory;
+import org.adligo.i.util.shared.MapFactory;
 
 
 public class JSEMapFactory extends MapFactory implements I_Factory {

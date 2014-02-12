@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.adligo.i.util.client.TextFormatter;
+import org.adligo.i.util.shared.TextFormatter;
 
 public class JSETextFormatter extends TextFormatter {
 	protected static void init() throws Exception {
