@@ -4,9 +4,12 @@ import org.adligo.i.util.shared.AppenderFactory;
 import org.adligo.i.util.shared.I_AppenderFactory;
 
 public class JSEAppenderFactory extends AppenderFactory implements I_AppenderFactory {
-	public char getLineSeperator() {
-		String lineSep = System.getProperty("line.seperator");
-		return lineSep.charAt(0);
+	public String getLineSeperator() {
+		String lineSep = System.lineSeparator();
+		if (lineSep == null) {
+			return "\n";
+		}
+		return lineSep;
 	}
 	
 	public Object createNew(Object p) {
