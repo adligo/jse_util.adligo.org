@@ -1,4 +1,6 @@
+/bin/
 /build/
-/classes_e
+/classes/
+/classes_e/
 /jse_util.jar
-/classes
+
